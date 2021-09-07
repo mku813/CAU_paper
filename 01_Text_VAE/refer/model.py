@@ -1,3 +1,5 @@
+## https://github.com/kefirski/pytorch_RVAE
+
 import torch as t
 import torch.nn as nn
 import torch.nn.functional as F
