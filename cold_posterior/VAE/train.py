@@ -60,3 +60,8 @@ def test(vae):
     
     test_loss /= len(test_loader.dataset)
     print("==> Test sets loss: {.4f}".format(test_loss))
+
+
+for epoch in range(1, 51):
+    train(epoch)
+    test()
