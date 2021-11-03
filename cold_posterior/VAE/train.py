@@ -7,7 +7,15 @@ from torch.autograd import Variable
 from torchvision.utils import save_image
 
 from cold_posterior.VAE import model
+from cold_posterior.dataset import data
 
+# dataset
+((trainset, testset), (trainloader, testloader)) = data.load_cifar10()
+
+
+
+
+# model
 vae = model.VAE(x_dim= 28*28, h_dim1=512, h_dim2=256, z_dim=2)
 
 if torch.cuda.is_available():
