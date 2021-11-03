@@ -3,13 +3,10 @@ from torchvision import datasets
 import torchvision.transforms as transforms
 from torch.utils.data import Dataset, DataLoader, dataloader
 
-import matplotlib.pyplot as plt
-import numpy as np
-
 def load_cifar10(batch_size=4):
     """
     Args:
-        split : 
+        batch_size : 
     """
     transform = transforms.Compose(
         [transforms.ToTensor(), transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))]
@@ -22,4 +19,5 @@ def load_cifar10(batch_size=4):
     testloader = DataLoader(testset, batch_size=batch_size, shuffle=False, num_workers=2)
     
     classes = ('plane', 'car', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck')
-
+    
+    return ((trainset, testset), (trainloader, testloader)) 
